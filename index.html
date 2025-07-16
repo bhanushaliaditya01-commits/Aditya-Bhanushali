@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Bhanushali - Finance Professional</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons (more options than default SVG) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0V4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* A very light blue-gray for a clean look */
+            color: #2d3748; /* Darker gray for primary text */
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem; /* Increased margin for better separation */
+            font-size: 2.25rem; /* text-4xl equivalent */
+            font-weight: 700; /* font-bold equivalent */
+            color: #1a202c; /* Even darker for titles */
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 70px; /* Slightly longer underline */
+            height: 4px; /* Thicker underline */
+            background-color: #4c51bf; /* Deeper indigo */
+            border-radius: 9999px;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 1rem; /* rounded-2xl for a softer look */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Stronger shadow */
+            padding: 2rem; /* Increased padding */
+            margin-bottom: 2rem; /* Increased margin */
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px); /* Subtle lift on hover */
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .experience-item, .project-item, .education-item {
+            border-left: 4px solid #818cf8; /* Medium indigo for timeline effect */
+            padding-left: 2rem; /* Increased padding */
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .experience-item:last-child, .project-item:last-child, .education-item:last-child {
+            margin-bottom: 0;
+        }
+        .experience-item::before, .project-item::before, .education-item::before {
+            content: '';
+            position: absolute;
+            left: -10px; /* Adjust position for thicker line */
+            top: 0.5rem; /* Align with text */
+            width: 20px; /* Larger dot */
+            height: 20px;
+            background-color: #4c51bf; /* Deeper indigo dot */
+            border-radius: 50%;
+            border: 4px solid #ffffff; /* Thicker white border */
+            box-shadow: 0 0 0 2px #818cf8; /* Outer glow matching line */
+        }
+        .skill-category-title {
+            color: #312e81; /* Darker indigo for skill categories */
+            font-weight: 600; /* Semi-bold */
+            margin-bottom: 0.5rem;
+        }
+        .skill-list-text {
+            color: #4a5568; /* Slightly darker gray for skill lists */
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header Section -->
+    <header class="bg-gradient-to-br from-blue-800 to-indigo-900 text-white py-16 px-4 sm:px-6 lg:px-8 shadow-2xl rounded-b-3xl">
+        <div class="max-w-5xl mx-auto text-center">
+            <!-- Headshot -->
+            <img src="http://googleusercontent.com/file_content/1" alt="Aditya Bhanushali's Headshot" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-white shadow-lg">
+            <!-- The 'src' URL has been updated with your uploaded image -->
+
+            <h1 class="text-5xl sm:text-6xl font-extrabold mb-4 tracking-tight">Aditya Bhanushali</h1>
+            <p class="text-2xl sm:text-3xl font-light mb-6 opacity-90">Mid-level Finance Professional</p>
+            <div class="flex flex-wrap justify-center gap-6 text-xl">
+                <a href="mailto:a.bhanushali@u.pacific.edu" class="flex items-center space-x-3 hover:text-blue-200 transition-colors duration-300">
+                    <i class="fas fa-envelope text-2xl"></i>
+                    <span>a.bhanushali@u.pacific.edu</span>
+                </a>
+                <span class="flex items-center space-x-3">
+                    <i class="fas fa-map-marker-alt text-2xl"></i>
+                    <span>San Francisco Bay Area, California</span>
+                </span>
+                <span class="flex items-center space-x-3">
+                    <i class="fas fa-phone-alt text-2xl"></i>
+                    <span>+1 350-204-4740</span>
+                </a>
+                <a href="https://www.linkedin.com/in/adityabhanushali" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-3 hover:text-blue-200 transition-colors duration-300">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Sections -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- Summary Section -->
+        <section class="mb-12">
+            <h2 class="section-title">Summary</h2>
+            <div class="card">
+                <p class="text-lg leading-relaxed text-gray-700">
+                    Results-driven Financial Analyst with a Master's in Finance and 3+ years of experience in <span class="font-semibold text-indigo-800">investment analysis, risk management, financial modeling, and compliance</span>. Proven ability to drive strategic financial decisions, optimize portfolio performance (e.g., <span class="font-semibold text-indigo-800">8% YoY gain</span> and <span class="font-semibold text-indigo-800">5% outperformance against US AGG benchmark</span>), and enhance operational efficiency through data-driven insights and robust analytical frameworks. Adept at leveraging Bloomberg Terminal, Excel, and Power BI to deliver actionable financial intelligence.
+                </p>
+            </div>
+        </section>
+
+        <!-- Work Experience Section -->
+        <section class="mb-12">
+            <h2 class="section-title">Work Experience</h2>
+
+            <!-- University of the Pacific -->
+            <div class="card experience-item">
+                <h3 class="text-2xl font-bold text-gray-900">Financial Analyst (Student Managed Fund)</h3>
+                <p class="text-indigo-700 text-lg">University of the Pacific | Stockton, California</p>
+                <p class="text-sm text-gray-500 mb-4">Jan 2025 – May 2025</p>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>Drove strategic portfolio diversification by 11% and reduced risk by 7%, recommending bond ETFs based on in-depth volatility, credit exposure, and macroeconomic trend analysis, aligning with policy risk thresholds.</li>
+                    <li>Outperformed the US AGG benchmark by 5% through data-driven strategic reallocations, leveraging weekly ETF performance and bond market analysis from Bloomberg and Morningstar.</li>
+                    <li>Mitigated potential downside risk by conducting comprehensive scenario and interest rate sensitivity testing, optimizing duration positioning to enhance portfolio resilience during market shifts.</li>
+                    <li>Strengthened fund governance and portfolio risk controls by proposing and implementing investment policy revisions, including new sector and credit quality limits, safeguarding assets.</li>
+                </ul>
+            </div>
+
+            <!-- Firm Decisions -->
+            <div class="card experience-item">
+                <h3 class="text-2xl font-bold text-gray-900">Financial Compliance Executive (Auditing and Reporting)</h3>
+                <p class="text-indigo-700 text-lg">Firm Decisions | Maharashtra, India</p>
+                <p class="text-sm text-gray-500 mb-4">May 2022 – Aug 2023</p>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>Enhanced financial performance and compliance for 30+ multinational clients by leading comprehensive compliance and variance reviews, resolving critical reporting gaps, and improving data accuracy, resulting in a 20% increase in operational efficiency.</li>
+                    <li>Improved global tracking and forecasting precision by 15% through leadership of multi-country account reconciliations and detailed budget variance analysis, providing critical insights for resource allocation.</li>
+                    <li>Boosted audit efficiency and control adherence by standardizing audit processes and developing automated Excel-based reporting tools, reducing project turnaround time by 25% and ensuring 90% adherence to internal financial controls.</li>
+                    <li>Enabled data-driven strategic decisions and boosted planning effectiveness by 15% by authoring 20+ detailed audit and research reports in collaboration with cross-functional teams.</li>
+                </ul>
+            </div>
+
+            <!-- KJ Shah Capital Advisors -->
+            <div class="card experience-item">
+                <h3 class="text-2xl font-bold text-gray-900">Financial Analyst (Investment & Portfolio Analysis)</h3>
+                <p class="text-indigo-700 text-lg">KJ Shah Capital Advisors | Maharashtra, India</p>
+                <p class="text-sm text-gray-500 mb-4">Jan 2021 – May 2022</p>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>Drove an 8% YoY improvement in portfolio performance by building advanced DCF and comparable company analysis models for equity and fixed-income securities, generating actionable investment insights.</li>
+                    <li>Enhanced audit readiness and improved financial outcomes by 15% for client portfolios by expertly managing GST, TDS, and payroll tax filings, coupled with proactive reconciliations and risk flagging.</li>
+                    <li>Increased reporting accuracy and reduced manual effort by 25% by automating recurring financial reporting tasks through Excel macros and pivot tables, optimizing key performance metric tracking.</li>
+                    <li>Strengthened internal controls and mitigated portfolio risk exposure through close collaboration with investment and finance teams, ensuring reporting practices aligned with stringent compliance requirements.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="mb-12">
+            <h2 class="section-title">Skills</h2>
+            <div class="card">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8"> <!-- Increased gap -->
+                    <div>
+                        <h4 class="skill-category-title text-xl">Financial & Investment Analysis:</h4>
+                        <p class="skill-list-text">Financial Modeling (DCF, Comparable Company Analysis), Investment Analysis, Portfolio Management, Risk Management, Budgeting & Forecasting, Variance Analysis, Financial Planning and Analysis, Equity Valuation, Fixed Income Analysis.</p>
+                    </div>
+                    <div>
+                        <h4 class="skill-category-title text-xl">Accounting & Auditing:</h4>
+                        <p class="skill-list-text">Financial Statement Analysis, Tax Compliance, Financial Data Reconciliation, US GAAP, IFRS, Audit Management.</p>
+                    </div>
+                    <div>
+                        <h4 class="skill-category-title text-xl">Tools & Technologies:</h4>
+                        <p class="skill-list-text">Bloomberg Terminal, Microsoft Excel (Advanced Formulas, VLOOKUP, Pivot Tables, Macros), Salesforce, Power BI, SQL (Basic), Morningstar.</p>
+                    </div>
+                    <div>
+                        <h4 class="skill-category-title text-xl">Interpersonal Skills:</h4>
+                        <p class="skill-list-text">Analytical Thinking & Problem-Solving, Strategic Decision-Making, Attention to Detail, Time Management, Cross-functional Collaboration, Data Interpretation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="mb-12">
+            <h2 class="section-title">Education</h2>
+
+            <!-- University of the Pacific - Master's -->
+            <div class="card education-item">
+                <h3 class="text-2xl font-bold text-gray-900">Master of Science, Finance</h3>
+                <p class="text-indigo-700 text-lg">University of the Pacific | Stockton, CA</p>
+                <p class="text-sm text-gray-500 mb-4">Aug 2023 – May 2025</p>
+                <p class="text-gray-700">Coursework: Investment & Portfolio Analysis, Corporate Finance, Financial Statement Analysis, Quantitative Finance.</p>
+            </div>
+
+            <!-- University of Mumbai - Bachelor's -->
+            <div class="card education-item">
+                <h3 class="text-2xl font-bold text-gray-900">Bachelor of Commerce, Accounting and Finance</h3>
+                <p class="text-indigo-700 text-lg">University of Mumbai | Mumbai, India</p>
+                <p class="text-sm text-gray-500 mb-4">Jun 2019 – Apr 2022</p>
+                <p class="text-gray-700">Coursework: International Finance, Financial Management, Investment & Portfolio Management, Taxation Compliance.</p>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="mb-12">
+            <h2 class="section-title">Projects</h2>
+
+            <!-- Tesla Project -->
+            <div class="card project-item">
+                <h3 class="text-2xl font-bold text-gray-900">Tesla Financial Statement Analysis & Forecasting Project</h3>
+                <p class="text-indigo-700 text-lg">University of the Pacific</p>
+                <p class="text-sm text-gray-500 mb-4">May 2025</p>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>Led a comprehensive financial analysis and 5-year revenue forecast for Tesla Inc., strategically evaluating key metrics (ROE, RNOA, NOPAT) and benchmarking against BYD to provide a robust assessment of financial health and profitability.</li>
+                    <li>Applied advanced FCFF and ROPI valuation methods, identifying significant overvaluation vs. market price and issuing a data-driven sell recommendation, demonstrating expertise in equity valuation and complex Excel-based financial modeling.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section class="mb-12">
+            <h2 class="section-title">Certifications</h2>
+            <div class="card">
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>CFA Institute Investment Foundations Certificate</li>
+                    <li>Bloomberg Market Concept</li>
+                    <li>Emerging Risk Management</li>
+                    <li>Excel for Financial Planning</li>
+                    <li>FMI Foundation</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-white py-8 px-4 sm:px-6 lg:px-8 text-center rounded-t-3xl">
+        <p class="text-lg">&copy; 2025 Aditya Bhanushali. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
