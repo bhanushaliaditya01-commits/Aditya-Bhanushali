@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Bhanushali - Finance Professional</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e2e8f0; /* slate-200 */
+        }
+        /* Custom gradient for hero section */
+        .hero-gradient {
+            background: radial-gradient(ellipse at top, #1f2937, #0a0a0a);
+        }
+        /* Custom gradient for section background */
+        .section-gradient {
+            background: radial-gradient(ellipse at top, #111827, #0a0a0a);
+        }
+        /* Style for the timeline line */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 1.5rem; /* Aligns with the center of the icon */
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #374151; /* gray-700 */
+            transform: translateX(-50%);
+        }
+        /* Custom animation for scroll indicator */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+        .animate-bounce-slow {
+            animation: bounce 2s infinite;
+        }
+
+        /* Styles for Scroll Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Styles for Back to Top Button */
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-black/30 backdrop-blur-lg">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#home" class="flex items-center justify-center w-10 h-10 text-xl font-bold text-white bg-slate-700 rounded-full">
+                        AB
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="text-slate-300 hover:bg-slate-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="#about" class="text-slate-300 hover:bg-slate-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        <a href="#experience" class="text-slate-300 hover:bg-slate-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Experience</a>
+                        <a href="#skills" class="text-slate-300 hover:bg-slate-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Skills</a>
+                        <a href="#projects" class="text-slate-300 hover:bg-slate-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+                        <a href="#contact" class="text-slate-300 hover:bg-slate-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Hamburger Menu Button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button id="hamburger-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-800 focus:ring-white">
+                        <span class="sr-only">Open main menu</span>
+                        <i data-lucide="menu" class="block h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="text-slate-300 hover:bg-slate-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#about" class="text-slate-300 hover:bg-slate-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="#experience" class="text-slate-300 hover:bg-slate-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Experience</a>
+                <a href="#skills" class="text-slate-300 hover:bg-slate-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Skills</a>
+                <a href="#projects" class="text-slate-300 hover:bg-slate-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+                <a href="#contact" class="text-slate-300 hover:bg-slate-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative flex items-center justify-center min-h-screen hero-gradient">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+                    <span class="block text-slate-400">Hello, I'm</span>
+                    <span class="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300 mt-2">Aditya Bhanushali</span>
+                </h1>
+                <p class="mt-4 text-lg sm:text-xl text-slate-300">Finance Professional & Analyst</p>
+                <p class="mt-6 max-w-xl mx-auto text-base sm:text-lg text-slate-400">
+                    Passionate about financial analysis, investment strategies, and data-driven decision making. Dedicated to delivering exceptional results in dynamic financial environments.
+                </p>
+                <div class="mt-8 flex justify-center gap-4 flex-wrap">
+                    <a href="#contact" class="inline-block bg-emerald-600 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-emerald-700 transition-colors duration-300">Get In Touch</a>
+                    <a href="#projects" class="inline-block bg-slate-700 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-slate-600 transition-colors duration-300">View My Work</a>
+                </div>
+                <div class="mt-10 flex justify-center space-x-6">
+                    <a href="mailto:bhanushali.aditya01@gmail.com" class="text-slate-400 hover:text-emerald-400 transition-colors" aria-label="Email">
+                        <i data-lucide="mail" class="w-6 h-6"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/aditya-bhanushali-0b1301198/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-emerald-400 transition-colors" aria-label="LinkedIn">
+                        <i data-lucide="linkedin" class="w-6 h-6"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2">
+            <a href="#about" aria-label="Scroll down">
+                <i data-lucide="chevron-down" class="w-8 h-8 text-slate-500 animate-bounce-slow"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 sm:py-24 bg-black animate-on-scroll">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto">
+                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">About Me</h2>
+                <p class="mt-4 text-lg text-slate-400">A dedicated finance professional with a Master of Science in Finance.</p>
+            </div>
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                <div class="text-slate-300 space-y-6">
+                     <p class="text-lg">
+                        A results-oriented financial analyst with a strong foundation in accounting and finance, who has enhanced his expertise with a Master of Science in Finance from the University of the Pacific. I have a proven track record in financial compliance, investment analysis, and data-driven reporting, with hands-on experience using tools like Bloomberg Terminal, Power BI, and advanced Excel.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <i data-lucide="trending-up" class="w-8 h-8 text-emerald-400 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="text-lg font-semibold text-white">Investment & Portfolio Analysis</h4>
+                                <p class="text-slate-400">Skilled in DCF modeling, comparable company analysis, and strategic portfolio diversification to drive performance and mitigate risk.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i data-lucide="shield-check" class="w-8 h-8 text-emerald-400 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="text-lg font-semibold text-white">Financial Compliance & Auditing</h4>
+                                <p class="text-slate-400">Experienced in leading compliance reviews, managing tax filings (GST, TDS), and ensuring adherence to US GAAP & IFRS standards.</p>
+                            </div>
+                        </div>
+                         <div class="flex items-start gap-4">
+                            <i data-lucide="bar-chart-3" class="w-8 h-8 text-emerald-400 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="text-lg font-semibold text-white">Data Visualization & Reporting</h4>
+                                <p class="text-slate-400">Proficient in creating automated reports and interactive dashboards with Power BI and Excel to enhance decision-making.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-8 text-center">
+                     <div class="bg-slate-800/50 p-6 rounded-xl">
+                        <h3 class="text-4xl font-bold text-emerald-400">M.S. in Finance</h3>
+                        <p class="mt-2 text-slate-300">University of the Pacific</p>
+                    </div>
+                    <div class="bg-slate-800/50 p-6 rounded-xl flex flex-col justify-center items-center h-full">
+                        <h3 class="text-2xl font-bold text-emerald-400 text-center">Bachelor's in Accounting and Finance</h3>
+                        <p class="mt-2 text-slate-300">University of Mumbai</p>
+                    </div>
+                    <div class="bg-slate-800/50 p-6 rounded-xl">
+                        <h3 class="text-lg font-semibold text-white">Key Certifications</h3>
+                        <p class="mt-2 text-slate-400">CFA Investment Foundations, Bloomberg Market Concepts, Emerging Risk Management</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 sm:py-24 section-gradient animate-on-scroll">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto">
+                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Professional Experience</h2>
+                <p class="mt-4 text-lg text-slate-400">My career journey in finance</p>
+            </div>
+            <div class="mt-16 max-w-4xl mx-auto relative timeline-line">
+                <!-- Timeline Item 1 -->
+                <div class="mb-12 pl-12 relative">
+                    <div class="absolute left-0 top-0 z-20 flex items-center justify-center bg-slate-700 shadow-xl w-12 h-12 rounded-full transform -translate-x-1/2">
+                        <i data-lucide="university" class="w-6 h-6 text-emerald-300"></i>
+                    </div>
+                    <div class="bg-slate-800/70 rounded-lg shadow-xl p-6">
+                        <p class="text-sm font-medium text-emerald-400">Jan 2024 - May 2024</p>
+                        <h3 class="mt-1 font-bold text-white text-xl">Financial Analyst (Student Managed Fund)</h3>
+                        <p class="mt-1 text-md text-slate-300">University of the Pacific</p>
+                        <ul class="mt-4 space-y-2 text-slate-400 list-disc list-inside">
+                            <li>Synthesized macroeconomic data and risk tolerance policies to recommend bond ETFs, driving a strategic portfolio diversification by 11% and reducing overall risk exposure by 7%.</li>
+                            <li>Outperformed the US AGG benchmark by 5% through data-driven strategic reallocations, leveraging weekly ETF performance and bond market analysis from Bloomberg and Morningstar.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Timeline Item 2 -->
+                <div class="mb-12 pl-12 relative">
+                    <div class="absolute left-0 top-0 z-20 flex items-center justify-center bg-slate-700 shadow-xl w-12 h-12 rounded-full transform -translate-x-1/2">
+                         <i data-lucide="building-2" class="w-6 h-6 text-emerald-300"></i>
+                    </div>
+                    <div class="bg-slate-800/70 rounded-lg shadow-xl p-6">
+                        <p class="text-sm font-medium text-emerald-400">May 2022 - Aug 2023</p>
+                        <h3 class="mt-1 font-bold text-white text-xl">Financial Compliance Executive</h3>
+                        <p class="mt-1 text-md text-slate-300">Firm Decisions (Ebiquity plc)</p>
+                        <ul class="mt-4 space-y-2 text-slate-400 list-disc list-inside">
+                            <li>Enhanced financial performance and compliance for 30+ multinational clients by leading comprehensive compliance and variance reviews, resolving critical reporting gaps, and improving data accuracy, resulting in a 20% increase in operational efficiency.</li>
+                            <li>Improved global tracking and forecasting precision by 15% through leadership of multi-country account reconciliations and detailed budget variance analysis.</li>
+                        </ul>
+                    </div>
+                </div>
+                 <!-- Timeline Item 3 -->
+                <div class="mb-12 pl-12 relative">
+                    <div class="absolute left-0 top-0 z-20 flex items-center justify-center bg-slate-700 shadow-xl w-12 h-12 rounded-full transform -translate-x-1/2">
+                         <i data-lucide="briefcase" class="w-6 h-6 text-emerald-300"></i>
+                    </div>
+                    <div class="bg-slate-800/70 rounded-lg shadow-xl p-6">
+                        <p class="text-sm font-medium text-emerald-400">Jan 2022 - Mar 2022</p>
+                        <h3 class="mt-1 font-bold text-white text-xl">Tax Compliance Intern</h3>
+                        <p class="mt-1 text-md text-slate-300">KJ Shah Consultancy</p>
+                         <ul class="mt-4 space-y-2 text-slate-400 list-disc list-inside">
+                            <li>Supported the preparation and timely submission of GST, TDS, and payroll tax filings, ensuring 100% compliance with Indian tax regulations.</li>
+                            <li>Conducted detailed reconciliation of payroll records, tax deductions, and vendor payments, identifying and resolving discrepancies.</li>
+                         </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 sm:py-24 bg-black animate-on-scroll">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto">
+                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Skills & Expertise</h2>
+                <p class="mt-4 text-lg text-slate-400">Technical and professional competencies</p>
+            </div>
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Technical Skills -->
+                <div class="bg-slate-900/50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-white mb-4">Technical Skills</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <span class="text-slate-300">Microsoft Excel</span>
+                            <div class="w-full bg-slate-700 rounded-full h-2.5 mt-1">
+                                <div class="bg-emerald-500 h-2.5 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="text-slate-300">Power BI</span>
+                            <div class="w-full bg-slate-700 rounded-full h-2.5 mt-1">
+                                <div class="bg-emerald-500 h-2.5 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="text-slate-300">SQL</span>
+                            <div class="w-full bg-slate-700 rounded-full h-2.5 mt-1">
+                                <div class="bg-emerald-500 h-2.5 rounded-full" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="text-slate-300">Salesforce</span>
+                            <div class="w-full bg-slate-700 rounded-full h-2.5 mt-1">
+                                <div class="bg-emerald-500 h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Financial Tools & Competencies -->
+                <div class="bg-slate-900/50 p-6 rounded-lg md:col-span-2">
+                    <h3 class="text-xl font-semibold text-white mb-4">Financial Competencies & Tools</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-slate-700 text-slate-200 text-sm font-medium px-3 py-1 rounded-full">Bloomberg Terminal</span>
+                        <span class="bg-slate-700 text-slate-200 text-sm font-medium px-3 py-1 rounded-full">Budgeting & Forecasting</span>
+                        <span class="bg-slate-700 text-slate-200 text-sm font-medium px-3 py-1 rounded-full">Variance Analysis</span>
+                        <span class="bg-slate-700 text-slate-200 text-sm font-medium px-3 py-1 rounded-full">Financial Planning (FP&A)</span>
+                        <span class="bg-slate-700 text-slate-200 text-sm font-medium px-3 py-1 rounded-full">DCF Modeling</span>
+                        <span class="bg-slate-700 text-slate-200 text-sm font-medium px-3 py-1 rounded-full">Financial Statement Analysis</span>
+                        <span class="bg-slate-700 text-slate-200 text-sm font-medium px-3 py-1 rounded-full">Tax Compliance</span>
+                        <span class="bg-slate-700 text-slate-200 text-sm font-medium px-3 py-1 rounded-full">Data Reconciliation</span>
+                        <span class="bg-slate-700 text-slate-200 text-sm font-medium px-3 py-1 rounded-full">US GAAP & IFRS</span>
+                        <span class="bg-slate-700 text-slate-200 text-sm font-medium px-3 py-1 rounded-full">Strategic Planning</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 sm:py-24 section-gradient animate-on-scroll">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto">
+                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Featured Projects</h2>
+                <p class="mt-4 text-lg text-slate-400">Showcasing my analytical and technical capabilities</p>
+            </div>
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Project Card 1 -->
+                <div class="bg-slate-800/70 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
+                    <div class="p-6 flex-grow">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-emerald-900/50 p-3 rounded-lg"><i data-lucide="line-chart" class="w-8 h-8 text-emerald-400"></i></div>
+                            <h3 class="text-xl font-bold text-white">Tesla Financial Statement Analysis & Forecasting</h3>
+                        </div>
+                        <div class="mt-4 text-slate-300 space-y-3">
+                            <p>Led a comprehensive financial analysis and 5-year revenue forecast for Tesla Inc., evaluating key metrics (ROE, RNOA, NOPAT) and benchmarking against BYD to assess financial health and profitability.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="text-xs font-medium bg-emerald-500/20 text-emerald-300 px-2.5 py-1 rounded-full">Financial Analysis</span>
+                            <span class="text-xs font-medium bg-emerald-500/20 text-emerald-300 px-2.5 py-1 rounded-full">Forecasting</span>
+                            <span class="text-xs font-medium bg-emerald-500/20 text-emerald-300 px-2.5 py-1 rounded-full">Valuation</span>
+                            <span class="text-xs font-medium bg-emerald-500/20 text-emerald-300 px-2.5 py-1 rounded-full">Excel Modeling</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="bg-slate-800/70 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
+                    <div class="p-6 flex-grow">
+                        <div class="flex items-center gap-4">
+                             <div class="bg-emerald-900/50 p-3 rounded-lg"><i data-lucide="bar-chart-big" class="w-8 h-8 text-emerald-400"></i></div>
+                            <h3 class="text-xl font-bold text-white">Corporate Financial Data Visualization</h3>
+                        </div>
+                        <div class="mt-4 text-slate-300 space-y-3">
+                           <p>Conducted comparative financial analysis of Walmart, Costco, and PepsiCo using Bloomberg Terminal and Excel, and designed interactive dashboards in Power BI to visualize key financial metrics, DuPont breakdown, and market valuation trends.</p>
+                        </div>
+                    </div>
+                     <div class="p-6 pt-0">
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="text-xs font-medium bg-emerald-500/20 text-emerald-300 px-2.5 py-1 rounded-full">Data Visualization</span>
+                            <span class="text-xs font-medium bg-emerald-500/20 text-emerald-300 px-2.5 py-1 rounded-full">Power BI</span>
+                             <span class="text-xs font-medium bg-emerald-500/20 text-emerald-300 px-2.5 py-1 rounded-full">Excel Modeling</span>
+                            <span class="text-xs font-medium bg-emerald-500/20 text-emerald-300 px-2.5 py-1 rounded-full">Bloomberg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 sm:py-24 bg-black animate-on-scroll">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto">
+                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Let's Connect</h2>
+                <p class="mt-4 text-lg text-slate-400">Ready to discuss opportunities and collaborate</p>
+            </div>
+            <div class="mt-16 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-slate-800 p-3 rounded-full"><i data-lucide="mail" class="w-6 h-6 text-emerald-400"></i></div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-white">Email</h4>
+                            <a href="mailto:bhanushali.aditya01@gmail.com" class="text-emerald-400 hover:text-emerald-300 transition-colors">bhanushali.aditya01@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="bg-slate-800 p-3 rounded-full"><i data-lucide="linkedin" class="w-6 h-6 text-emerald-400"></i></div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-white">LinkedIn</h4>
+                            <a href="https://www.linkedin.com/in/aditya-bhanushali-0b1301198/" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 transition-colors">Connect with me</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Contact Form -->
+                <div>
+                    <form action="https://formsubmit.co/bhanushali.aditya01@gmail.com" method="POST" class="space-y-4">
+                        <!-- FormSubmit Hidden Inputs -->
+                        <input type="hidden" name="_subject" value="New Contact Form Submission from Your Portfolio!">
+                        <input type="hidden" name="_captcha" value="false">
+                        
+                        <div>
+                            <label for="name" class="sr-only">Name</label>
+                            <input type="text" name="name" id="name" required placeholder="Your Name" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                        </div>
+                        <div>
+                            <label for="email" class="sr-only">Email</label>
+                            <input type="email" name="email" id="email" required placeholder="Your Email" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                        </div>
+                        <div>
+                            <label for="subject" class="sr-only">Subject</label>
+                            <input type="text" name="subject" id="subject" required placeholder="Subject" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                        </div>
+                        <div>
+                            <label for="message" class="sr-only">Message</label>
+                            <textarea name="message" id="message" rows="5" required placeholder="Your Message" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-emerald-600 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-emerald-700 transition-colors duration-300">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900/50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="flex flex-col sm:flex-row justify-center items-center">
+                <p class="text-slate-400 text-sm">&copy; 2024 Aditya Bhanushali. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#home" id="back-to-top" class="bg-emerald-600 text-white p-3 rounded-full shadow-lg hover:bg-emerald-700 transition-colors duration-300">
+        <i data-lucide="arrow-up" class="w-6 h-6"></i>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize Lucide Icons
+            lucide.createIcons();
+
+            // --- Mobile Menu Toggle ---
+            var hamburgerButton = document.getElementById('hamburger-button');
+            var mobileMenu = document.getElementById('mobile-menu');
+            var menuIcon = hamburgerButton.querySelector('i');
+
+            hamburgerButton.addEventListener('click', function() {
+                var isExpanded = hamburgerButton.getAttribute('aria-expanded') === 'true';
+                hamburgerButton.setAttribute('aria-expanded', !isExpanded);
+                mobileMenu.classList.toggle('hidden');
+                
+                if (mobileMenu.classList.contains('hidden')) {
+                    menuIcon.setAttribute('data-lucide', 'menu');
+                } else {
+                    menuIcon.setAttribute('data-lucide', 'x');
+                }
+                lucide.createIcons();
+            });
+            
+            mobileMenu.addEventListener('click', function(event) {
+                if(event.target.tagName === 'A'){
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.setAttribute('data-lucide', 'menu');
+                    lucide.createIcons();
+                }
+            });
+
+            // --- Navbar Style on Scroll ---
+            var navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('bg-black/80', 'shadow-lg');
+                } else {
+                    navbar.classList.remove('bg-black/80', 'shadow-lg');
+                }
+            });
+
+            // --- Back to Top Button Logic ---
+            var backToTopButton = document.getElementById('back-to-top');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 400) {
+                    backToTopButton.style.display = 'block';
+                } else {
+                    backToTopButton.style.display = 'none';
+                }
+            });
+
+            // --- Scroll Animation Logic ---
+            var scrollElements = document.querySelectorAll('.animate-on-scroll');
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            scrollElements.forEach(function(el) {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
